@@ -34,7 +34,6 @@ export default function AddEmpoly() {
     }
   return (
     <View style={styles.main3}>
-        <Text>aaa</Text>
       <Text style={styles.title}>add empoly</Text>
       <TextInput onChangeText={setName1} value={name1} mode='flat' label='entar name' style={styles.input1}/>
       <TextInput onChangeText={setId} value={id} mode='flat' label='enter id' style={styles.input1}/>
