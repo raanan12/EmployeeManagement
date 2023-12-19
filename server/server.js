@@ -133,6 +133,6 @@ app.get('/allEmpoly',async(req,res)=>{
     res.json(users)
 })
 
-app.listen(80,'0.0.0.0',()=>{
+app.listen(3000,()=>{
     console.log('port 3000 is on');
 })

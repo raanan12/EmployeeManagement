@@ -2,8 +2,8 @@ import {createContext,useState,useEffect} from 'react'
 import { Alert } from 'react-native'
 
 
-// const addresIp = 'http://192.168.52.76:3000'
-const addresIp = 'http://34.121.116.166'
+const addresIp = 'http://192.168.162.76:3000'//Enter the IP address of the computer
+// const addresIp = 'http://34.121.116.166'
 
 const Alldata = createContext()
 
