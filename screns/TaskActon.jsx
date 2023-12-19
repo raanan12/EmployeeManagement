@@ -18,12 +18,12 @@ export default function TaskActon(props) {
 
 const styles = StyleSheet.create({
     textStyle:{
-        fontWeight:900,
+        // fontWeight:900,
         color:'rgb(255, 255, 255)'
     },
     main:{
         backgroundColor:'rgb(74, 74, 74)',
-        fontWeight:'bold',
+        // fontWeight:'bold',
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-around',

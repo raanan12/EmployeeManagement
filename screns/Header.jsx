@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity,Image} from 'react-native'
 import {Button , Appbar} from 'react-native-paper'
 import Alldata from '../contextApi'
 import React,{useContext,useState} from 'react'
@@ -12,24 +12,33 @@ export default function Header(props) {
   return (
     <View style={styles.main}>
       <Text style={styles.textStyle}>{user.userName}</Text>
-      <Appbar.Action color={'white'} icon="menu" onPress={() => {props.setShowNav(!props.showNav)}} />
+      <TouchableOpacity onPress={() => {props.setShowNav(!props.showNav)}}>
+          <Image style={styles.bottun} source={require("./imges/men.png")} />
+        </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     main:{
-        height:40,
+        height:45,
         display:'flex',
         flexDirection:"row",
         alignItems:'center',
         justifyContent:'space-between',
         paddingLeft:15,
-        backgroundColor:'black',
+        backgroundColor:'#0a2634',
     }
     ,
     textStyle:{
-        fontWeight:900,
+        fontWeight:'900',
         color:'white'
     },
+    bottun:{
+      margin:5,
+      height:36,
+      width:36,
+      elevation:8,
+  
+    }
 })

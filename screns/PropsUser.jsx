@@ -6,7 +6,7 @@ export default function PropsUser() {
     const {taskStop}=useContext(Alldata)
   return (
     <View style={styles.main}>
-        <Text style={{fontSize:30,fontWeight:700,marginTop:20}}>Employee details</Text>
+        <Text style={{fontSize:30,marginTop:20}}>Employee details</Text>
     <View style={styles.main3}>
       <Text style={styles.title}>name : {userConenct.userName}</Text>
       <Text style={styles.title}>id : {userConenct.id}</Text>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize:22,
-        fontWeight:300,
+        // fontWeight:300,
         marginBottom:30,
         borderBottomColor:'black',
         borderBottomWidth:2,

@@ -13,7 +13,7 @@ export default function Empoly(props) {
 const styles = StyleSheet.create({
   main:{
     backgroundColor:'rgb(74, 74, 74)',
-    fontWeight:'bold',
+    // fontWeight:'bold',
     borderColor:'black',
     borderWidth:2,
     borderStyle:'solid',

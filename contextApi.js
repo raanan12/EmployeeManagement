@@ -1,8 +1,12 @@
 import {createContext,useState,useEffect} from 'react'
 import { Alert } from 'react-native'
 
-const addresIp= 'http://34.165.9.220'
+
+// const addresIp = 'http://192.168.52.76:3000'
+const addresIp = 'http://34.121.116.166'
+
 const Alldata = createContext()
+
 
 export const Data1 = ({children})=>{
     const [users,setUsers] = useState([])

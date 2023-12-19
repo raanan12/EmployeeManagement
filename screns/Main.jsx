@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,SafeAreaView } from 'react-native'
 import Alldata from '../contextApi'
 import React,{useContext,useState} from 'react'
 import Header from './Header'

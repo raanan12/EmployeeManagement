@@ -6,6 +6,7 @@ import Alldata from '../contextApi'
 
 
 export default function AddTask() {
+    let date = new Date()
     const {addTask}= useContext(Alldata)
     const [name1,setName1]=useState('')
     const [description,setDescription]=useState('') 
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize:35,
         textAlign:'center',
-        fontWeight:700,
+        // fontWeight:700,
         marginBottom:30
     },
     input1:{

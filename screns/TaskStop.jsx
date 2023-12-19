@@ -5,7 +5,6 @@ import {Button} from 'react-native-paper'
 export default function TaskStop(props) {
   return (
     <View style={styles.main}>
-        <Text style={styles.textStyle}>id {props.val.id}</Text>
         <Text style={styles.textStyle}>title: {props.val.nameTask}</Text>
         <Text style={styles.textStyle}>{props.val.descripton}</Text>
     </View>
@@ -14,12 +13,12 @@ export default function TaskStop(props) {
 
 const styles = StyleSheet.create({
     textStyle:{
-        fontWeight:900,
+        // fontWeight:900,
         color:'rgb(255, 255, 255)'
     },
     main:{
         backgroundColor:'rgb(74, 74, 74)',
-        fontWeight:'bold',
+        // fontWeight:'bold',
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-around',

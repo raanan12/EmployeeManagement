@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize:35,
         textAlign:'center',
-        fontWeight:700,
+        // fontWeight:700,
         marginBottom:30
     },
     input1:{

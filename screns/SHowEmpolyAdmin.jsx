@@ -5,8 +5,8 @@ export default function PropsUser(props) {
 
   return (
     <View style={styles.main}>
-        <Text style={{fontSize:30,fontWeight:700,marginTop:20}}>Employee details</Text>
-        <Text onPress={()=>{props.setShow(false)}} style={{width:30,position:'absolute',top:20,left:20,fontSize:20,fontWeight:900}}>X</Text>
+        <Text style={{fontSize:30,marginTop:20}}>Employee details</Text>
+        <Text onPress={()=>{props.setShow(false)}} style={{width:30,position:'absolute',top:20,left:20,fontSize:20}}>X</Text>
     <View style={styles.main3}>
       <Text style={styles.title}>name : {props.empolyShow.userName}</Text>
       <Text style={styles.title}>id : {props.empolyShow.id}</Text>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize:22,
-        fontWeight:300,
+        // fontWeight:300,
         marginBottom:30,
         borderBottomColor:'black',
         borderBottomWidth:2,

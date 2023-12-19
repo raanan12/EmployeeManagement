@@ -1,25 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import {Data1} from './contextApi'
 import { StyleSheet, Text, View } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import { NavigationContainer } from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack'
 import SignIn from './screns/SignIn';
 import Main from './screns/Main';
 import MainAdmin from './screns/MainAdmin';
 
 
+const Stack = createStackNavigator()
 export default function App() {
-  const Stack = createNativeStackNavigator()
   return (
+      <NavigationContainer independent={true}>
     <Data1>
-      <NavigationContainer >
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen  name='signIn' component={SignIn}/>
           <Stack.Screen name='home' component={Main}/>
           <Stack.Screen name='admin' component={MainAdmin}/>
         </Stack.Navigator>
-      </NavigationContainer>
     </Data1>
+      </NavigationContainer>
   );
 }
 
