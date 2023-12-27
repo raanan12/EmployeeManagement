@@ -1,28 +1,35 @@
-import { StyleSheet, Text, TouchableOpacity,View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity,View,Image } from 'react-native'
 import React from 'react'
 
 export default function Empoly(props) {
   return (
     <TouchableOpacity onPress={()=>{props.setEmpolyShow(props.val);props.setShow(true)}} style={styles.main}>
-      <Text style={styles.text}>{props.val.userName}</Text>
-      <Text style={styles.text}>{props.val.id}</Text>
+      <Image  source={require("./imges/propsUser.png")} />
+      <View>
+        <Text style={styles.text}> name :{props.val.userName}</Text>
+        <Text style={styles.text}> id : {props.val.id}</Text>
+        <Text style={styles.text}> class : {props.val.class}</Text>
+      </View>
     </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
   main:{
-    backgroundColor:'rgb(74, 74, 74)',
-    // fontWeight:'bold',
-    borderColor:'black',
+    margin: 15,
+    borderRadius: 10,
+    height:140,
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor: 'white',
+    borderColor:'rgb(35,163,198)',
     borderWidth:2,
-    borderStyle:'solid',
-    margin:5,
-    padding:20,
-    borderRadius:4
+    padding:10
 }
 ,text:{
-  fontSize:15,
-  color:'#ffffff'
+  fontSize:16,
+  color:'rgb(35,163,198)'
 }
 })

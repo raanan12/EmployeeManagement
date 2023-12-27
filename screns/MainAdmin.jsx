@@ -40,14 +40,15 @@ export default function MainAdmin() {
   return (
     <View style={styles.main}>
       <Header setShow={setShow} setShowNav={setShowNav} showNav={showNav}/>
-      {showNavN()}
       {show1()}
+      {showNavN()}
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   main:{
-    flex:1
+    position:'relative',
+    flex:1,
   }
 })

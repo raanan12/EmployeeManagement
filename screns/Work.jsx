@@ -1,7 +1,8 @@
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet,Image } from 'react-native';
 import React, { useContext } from 'react';
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
 import Alldata from '../contextApi';
+import ScalableText  from 'react-native-text';
 
 export default function Work(props) {
   const { taceTasc, userConenct } = useContext(Alldata);
@@ -9,18 +10,15 @@ export default function Work(props) {
   return (
     <Card style={styles.card}>
       <Card.Content>
-        <Title style={styles.title}>{props.val.nameTask}</Title>
-        <Paragraph style={styles.description}>{props.val.descripton}</Paragraph>
-        <Text style={{color:'#aaaaaa'}}>upload date:  {date.getDate()} / {date.getMonth()} / {date.getFullYear()}</Text>
+        <ScalableText style={styles.title}>{props.val.nameTask}</ScalableText>
+        <ScalableText style={styles.description}>{props.val.descripton}</ScalableText>
+        {/* <Text style={{color:'#aaaaaa'}}>upload date:  {date.getDate()} / {date.getMonth()} / {date.getFullYear()}</Text> */}
       </Card.Content>
       <Card.Actions style={styles.cardActions}>
-        <Button
-          onPress={() => {taceTasc(userConenct.id, props.val.id)}}
-          style={styles.button}
-          color="#000000" // צבע כיתוב הכפתור
-          >
-          <Text style={styles.buttonText}>Take the Task</Text>
-        </Button>
+        <TouchableOpacity  style={styles.button} onPress={() => {taceTasc(userConenct.id, props.val.id)}}>
+           <Image style={styles.img} source={require('./imges/tackT1.png')}/>
+           <Text style={styles.buttonText}>Take the Task</Text>
+        </TouchableOpacity>
       </Card.Actions>
       
     </Card>
@@ -32,33 +30,46 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     elevation: 5,
-    backgroundColor: '#222222',
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'space-between',
+    backgroundColor: 'white',
+    borderColor:'rgb(35,163,198)',
+    borderWidth:2,
+    minHeight:140,
+    paddingBottom:0
   },
   title: {
     fontSize: 20,
-    // fontWeight: 'bold',
-    color: '#ffffff',
+    fontWeight: 'bold',
+    color: 'rgb(35,163,198)',
     marginBottom: 5,
   },
   description: {
-    fontSize: 16,
-    color: '#aaaaaa',
+    fontSize: 18,
+    color: 'black',
   },
   cardActions: {
-    justifyContent: 'flex-end',
-    borderTopWidth: 1,
-    borderTopColor: '#444444',
+    marginTop:18,
+    alignSelf:'flex-start'
   },
   button: {
-    backgroundColor: '#ffffff', // צבע רקע הכפתור
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    elevation: 0,
+    backgroundColor: 'rgb(35,163,198)',
+    height:35,
+    width:140,
+    borderRadius:10,
+    display:'flex',
+    flexDirection:'row-reverse',
+    alignItems:'center',
+    justifyContent:'space-around',
   },
   buttonText: {
-    color: '#000000', // צבע כיתוב הכפתור
-    fontSize: 16,
-    // fontWeight: 'bold',
+    color: 'white', // צבע כיתוב הכפתור
+    fontSize: 14,
+    fontWeight: 'bold',
   },
+  img:{
+    height:23,
+    width:23
+  }
 });

@@ -3,7 +3,7 @@ import { Alert } from 'react-native'
 
 
 const addresIp = 'http://192.168.162.76:3000'//Enter the IP address of the computer
-// const addresIp = 'http://34.121.116.166'
+// const addresIp = 'http://34.133.16.79'
 
 const Alldata = createContext()
 

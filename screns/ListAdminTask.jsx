@@ -18,4 +18,6 @@ export default function ListAdminTask() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  
+})

@@ -11,7 +11,7 @@ import PropsUser from './PropsUser'
 
 export default function Main() {
   const [show,setShow]=useState(0)
-  const [showNav,setShowNav]=useState(false)
+  const [showNav,setShowNav]=useState(true)
   const showNow = () =>{
     if(showNav == true){
         return <NavBar setShowNav={setShowNav} setShow={setShow}/>

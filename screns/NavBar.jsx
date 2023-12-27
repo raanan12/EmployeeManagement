@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity,Image } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 import {Button} from 'react-native-paper'
 import React,{useContext} from 'react'
@@ -9,38 +9,80 @@ export default function NavBar(props) {
   const {setFlag1}= useContext(Alldata)
   const {flag1}= useContext(Alldata)
   return (
-    <View style={styles.main}>
-        <Button textColor='white' onPress={()=>{setFlag1(!flag1);props.setShow(0);props.setShowNav(false) }} >  All works</Button>
-        <Button textColor='white' onPress={()=>{setFlag1(!flag1);props.setShow(1);props.setShowNav(false)}} style={styles.buttonStyle} >my works</Button>
-        <Button textColor='white' onPress={()=>{props.setShow(2);props.setShowNav(false)}} style={styles.buttonStyle}>History</Button>
-        <Button textColor='white' onPress={()=>{props.setShow(3);props.setShowNav(false)}} style={styles.buttonStyle}>Employee details</Button>
-        <Button textColor='white' onPress={()=>{nav.navigate('signIn')}} style={styles.buttonStyle}>Exite</Button>
-    </View>
+      <View style={styles.main}>
+          <TouchableOpacity style={styles.buttonStyle} onPress={() => { setFlag1(!flag1); props.setShow(0); props.setShowNav(false) }}>
+              <Text style={styles.textStyle}>
+                  Take a task
+              </Text>
+              <Image style={styles.img} source={require("./imges/allTask.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle} onPress={() => { setFlag1(!flag1); props.setShow(1); props.setShowNav(false) }}>
+              <Text  style={styles.textStyle}>
+                  My task
+              </Text>
+              <Image style={styles.img} source={require("./imges/myTask.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle} onPress={() => { props.setShow(2); props.setShowNav(false) }}>
+              <Text style={styles.textStyle}>
+                  Tasks I performed
+              </Text>
+              <Image style={styles.img} source={require("./imges/taskStop.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle} onPress={() => { props.setShow(3); props.setShowNav(false) }}>
+              <Text   style={styles.textStyle}>
+                  Employee details
+              </Text>
+              <Image style={styles.img} source={require("./imges/propsUser.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle} textColor='white' onPress={() => { nav.navigate('signIn') }}>
+              <Text  style={styles.textStyle}>
+                  Exite
+              </Text>
+             <Image style={styles.img} source={require("./imges/ex.png")} />
+          </TouchableOpacity>
+      </View>
   )
 }
 
 const styles = StyleSheet.create({
     main:{
         display:'flex',
-        justifyContent:'space-around',
-        alignItems:'center',
-        top:40,
+        justifyContent:'space-between',
+        flexDirection:'row',
+        flexWrap:'wrap',
+        alignItems:'flex-start',
+        top:55,
+        width:'100%',
+        height:'100%',
         right:0,
         position:"absolute",
-        padding:4,
         borderBottomLeftRadius:4,
-        backgroundColor:'#0a2634',
+        backgroundColor:'white',
+        padding:8
     },
     textStyle:{
-        color:'white'
+        color:'rgb(35,100,300)',
+        fontSize:16,
+        fontWeight:'600',
+        textAlign:'center'
     },
     buttonStyle:{
-        borderRadius:0,
-        borderColor:'white',
-        borderTopWidth:2,
+        borderRadius:10,
+        borderColor:'rgb(35,163,198)',
+        borderWidth:3,
         borderStyle:'solid',
-        color:'white',
-        width:'100%',
-        textAlign:'center'
+        color:'rgb(35,163,198)',
+        width:120,
+        margin:20,
+        height:110,
+        textAlign:'center',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    img:{
+        height:40,
+        width:40,
+        marginTop:10
     }
 })

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity,Image } from 'react-native'
 import React,{useContext} from 'react'
 import Alldata from '../contextApi'
 import {Button} from 'react-native-paper'
@@ -11,34 +11,79 @@ export default function AdminNavBar(props) {
   const {flag}=useContext(Alldata)
   return (
     <View style={styles.main}>
-        <Button style={styles.buttonStyle} onPress={()=>{props.setShow(1);props.setShowNav(false) }}>add task</Button>
-        <Button style={styles.buttonStyle} onPress={()=>{props.setShow(2);props.setShowNav(false);}}>remove task</Button>
-        <Button style={styles.buttonStyle} onPress={()=>{props.setShow(3);props.setShowNav(false)}}>all employees</Button>
-        <Button style={styles.buttonStyle} onPress={()=>{props.setShow(4);props.setShowNav(false)}}>add employe</Button>
-        <Button onPress={()=>{nav.navigate('signIn')}} style={styles.buttonStyle}>Exite</Button>
+        <TouchableOpacity style={styles.buttonStyle}onPress={()=>{props.setShow(1);props.setShowNav(false) }}>
+              <Text style={styles.textStyle}>
+                  Add task
+              </Text>
+              <Image style={styles.img} source={require("./imges/addT.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity  style={styles.buttonStyle} onPress={()=>{props.setShow(2);props.setShowNav(false);}}>
+              <Text  style={styles.textStyle}>
+                List task
+              </Text>
+              <Image style={styles.img} source={require("./imges/myTask.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle} onPress={()=>{props.setShow(3);props.setShowNav(false)}}>
+              <Text style={styles.textStyle}>
+              Show employees
+              </Text>
+              <Image style={styles.img} source={require("./imges/listUsers.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle} onPress={()=>{props.setShow(4);props.setShowNav(false)}}>
+              <Text   style={styles.textStyle}>
+                  Add empoly
+              </Text>
+              <Image style={styles.img} source={require("./imges/addUser.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle} textColor='white' onPress={() => { nav.navigate('signIn') }}>
+              <Text  style={styles.textStyle}>
+                  Exite
+              </Text>
+             <Image style={styles.img} source={require("./imges/ex.png")} />
+          </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     main:{
-        top:40,
-        right:0,
         position:"absolute",
-        width:150,
-        padding:4,
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'row',
+        flexWrap:'wrap',
+        alignItems:'flex-start',
+        top:55,
+        width:'100%',
+        height:'100%',
+        right:0,
         borderBottomLeftRadius:4,
-        backgroundColor:'black',
-        zIndex: 1
+        backgroundColor:'white',
+        padding:8,
     },
     textStyle:{
-        color:'white'
+        color:'rgb(35,100,300)',
+        fontSize:16,
+        fontWeight:'600',
+        textAlign:'center'
     },
     buttonStyle:{
-        borderRadius:0,
-        borderColor:'white',
-        borderTopWidth:2,
+        borderRadius:10,
+        borderColor:'rgb(35,163,198)',
+        borderWidth:3,
         borderStyle:'solid',
-        color:'white',
+        color:'rgb(35,163,198)',
+        width:120,
+        margin:20,
+        height:110,
+        textAlign:'center',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    img:{
+        height:40,
+        width:40,
+        marginTop:10
     }
 })

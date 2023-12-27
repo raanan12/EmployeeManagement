@@ -4,6 +4,7 @@ import React,{useContext} from 'react'
 export default function PropsUser() {
     const {userConenct}=useContext(Alldata)
     const {taskStop}=useContext(Alldata)
+    const {taskAction}=useContext(Alldata)
   return (
     <View style={styles.main}>
         <Text style={{fontSize:30,marginTop:20}}>Employee details</Text>
@@ -11,6 +12,7 @@ export default function PropsUser() {
       <Text style={styles.title}>name : {userConenct.userName}</Text>
       <Text style={styles.title}>id : {userConenct.id}</Text>
       <Text style={styles.title}>class : {userConenct.class}</Text>
+      <Text style={styles.title}>active tasks : {taskAction.length} </Text>
       <Text style={styles.title}>tasks performed : {taskStop.length} </Text>
     </View>
     </View>
